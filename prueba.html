@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#075b65">
+<meta name="description" content="Invitación digital · Conferencia Anual Barrio Los Teques 2026">
+<title>Conferencia Anual Barrio Los Teques 2026</title>
+<style>
+:root {
+  --deep:#064e58; --teal:#087f8c; --teal2:#0b9aa5; --gold:#d9b44a;
+  --gold2:#f1d77b; --cream:#fbf7ed; --ink:#17383d; --muted:#678086;
+  --glass:rgba(255,255,255,.74); --shadow:0 24px 70px rgba(0,34,39,.25);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+ margin:0;color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+ background:
+ radial-gradient(circle at 15% 10%,rgba(255,255,255,.75),transparent 25%),
+ radial-gradient(circle at 85% 20%,rgba(241,215,123,.25),transparent 22%),
+ linear-gradient(145deg,#dcebea,#b7d0ce 50%,#d5e5e1);
+ min-height:100vh;
+}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.16;
+ background-image:radial-gradient(#fff 1px,transparent 1px);background-size:26px 26px;}
+header{padding:28px 18px 10px;text-align:center;position:relative;z-index:2}
+.brand{font-size:11px;font-weight:800;letter-spacing:.13em;color:var(--deep)}
+header h1{margin:9px 0 4px;font-size:clamp(26px,5vw,48px);color:var(--deep);letter-spacing:-.03em}
+header p{margin:0;color:var(--muted)}
+.toolbar{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:20px auto 26px;position:sticky;top:10px;z-index:10}
+button,.navbtn{
+ border:0;border-radius:999px;padding:12px 17px;font-weight:800;cursor:pointer;text-decoration:none;
+ box-shadow:0 8px 22px rgba(0,45,52,.15);transition:transform .2s,box-shadow .2s;
+}
+button:hover,.navbtn:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(0,45,52,.22)}
+.primary{background:var(--deep);color:white}.gold{background:var(--gold);color:#fff}.light{background:rgba(255,255,255,.82);color:var(--deep)}
+.scene{width:min(1220px,94vw);margin:0 auto 42px;perspective:1700px}
+.book{display:grid;grid-template-columns:repeat(3,1fr);gap:13px;transform-style:preserve-3d;animation:float 7s ease-in-out infinite}
+.panel{
+ min-height:700px;padding:30px 24px;border-radius:22px;background:var(--cream);position:relative;overflow:hidden;
+ box-shadow:var(--shadow),inset 0 0 0 1px rgba(6,78,88,.09);
+ transform-style:preserve-3d;transition:transform .5s ease,box-shadow .5s ease;
+}
+.panel:hover{transform:translateZ(18px) rotateY(-1deg);box-shadow:0 34px 90px rgba(0,34,39,.3),inset 0 0 0 1px rgba(6,78,88,.12)}
+.panel:after{content:"";position:absolute;inset:-30%;background:linear-gradient(115deg,transparent 35%,rgba(255,255,255,.55) 48%,transparent 60%);transform:translateX(-55%);animation:sheen 8s ease-in-out infinite;pointer-events:none}
+.cover{background:linear-gradient(145deg,var(--teal2),var(--deep) 75%);color:white;box-shadow:0 34px 100px rgba(0,55,63,.36)}
+.cover .accent,.accent{height:7px;border-radius:20px;background:linear-gradient(90deg,var(--gold),var(--gold2),var(--gold));margin:-30px -24px 27px}
+.cover .mini{font-size:10px;font-weight:800;letter-spacing:.1em;text-align:center;opacity:.96}
+.cover h2{font-size:clamp(36px,5vw,62px);line-height:.9;letter-spacing:-.045em;text-align:center;margin:42px 0 13px;color:#ffe58a;text-shadow:0 8px 22px rgba(0,0,0,.18)}
+.cover .sub{text-align:center;font-size:22px;font-weight:850;letter-spacing:.02em}
+.year{font-size:40px;text-align:center;font-weight:900;color:#ffe58a;margin:13px 0 16px}
+.quote{background:rgba(255,255,255,.96);color:var(--deep);padding:20px;border-radius:19px;text-align:center;font-weight:800;line-height:1.35;box-shadow:0 16px 34px rgba(0,0,0,.2);margin:26px 0 18px}
+.quote span{display:block;color:#a77d16;margin-top:9px;font-size:12px;letter-spacing:.08em}
+.cover img{display:block;width:100%;height:190px;object-fit:cover;border-radius:17px;box-shadow:0 16px 36px rgba(0,0,0,.28);transform:translateZ(24px)}
+.center-note{text-align:center;font-weight:850;letter-spacing:.1em;font-size:10px;margin-top:12px}
+.hymn-card h3{font-size:16px;color:var(--deep);margin:2px 0 14px;letter-spacing:.01em}
+.hymn-number{display:inline-flex;background:#e8f1ef;color:var(--deep);font-weight:900;border-radius:999px;padding:5px 10px;font-size:10px;margin-bottom:8px}
+.lyrics p{margin:0;font-size:12.6px;line-height:1.27}
+.lyrics .spacer{height:7px}
+.agenda-item{padding:13px 0;border-bottom:1px solid rgba(6,78,88,.12)}
+.agenda-title{font-size:11px;font-weight:900;color:var(--deep);letter-spacing:.06em;margin-bottom:5px}
+.agenda-body{font-size:12.5px;line-height:1.4}
+.section{width:min(1220px,94vw);margin:0 auto 34px;scroll-margin-top:90px}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:15px;margin-bottom:12px}
+.section h2{margin:0;color:var(--deep);font-size:clamp(24px,4vw,36px)}
+.section .lead{color:var(--muted);margin:3px 0 0}
+.hymns-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:15px}
+.hymns-grid .hymn-card,.program-card{background:var(--glass);backdrop-filter:blur(14px);border-radius:20px;padding:22px;box-shadow:0 14px 42px rgba(0,45,52,.12);border:1px solid rgba(255,255,255,.7)}
+.sharebox{text-align:center;background:linear-gradient(135deg,var(--deep),var(--teal));color:white;padding:28px;border-radius:24px;box-shadow:var(--shadow)}
+.sharebox h2{color:white;margin:0 0 7px}.sharebox p{opacity:.9;margin:0 0 16px}
+footer{text-align:center;padding:25px;color:#547176;font-size:12px}
+@keyframes float{0%,100%{transform:rotateX(1deg) translateY(0)}50%{transform:rotateX(1deg) translateY(-7px)}}
+@keyframes sheen{0%,55%,100%{transform:translateX(-55%)}72%{transform:translateX(55%)}}
+@media(max-width:900px){.book{grid-template-columns:1fr}.panel{min-height:auto}.hymns-grid{grid-template-columns:1fr}.toolbar{position:relative;top:auto}}
+@media(prefers-reduced-motion:reduce){,:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+/* Nueva experiencia: portada → Cristo → programa → himnos → compartir */
+body{overflow-x:hidden}
+.landing{min-height:calc(100vh - 10px);width:min(1220px,94vw);margin:0 auto 42px;display:grid;place-items:center;position:relative;perspective:1600px}
+.landing:before{pointer-events:none;content:"";position:absolute;inset:3%;border-radius:40px;background:linear-gradient(135deg,rgba(255,255,255,.82),rgba(255,255,255,.32));box-shadow:0 35px 100px rgba(0,34,39,.22);border:1px solid rgba(255,255,255,.75);transform:rotateX(1deg) rotateY(-1deg);}
+.landing-glow{pointer-events:none;position:absolute;width:65vw;height:65vw;max-width:700px;max-height:700px;border-radius:50%;background:radial-gradient(circle,rgba(217,180,74,.26),transparent 68%);filter:blur(5px);animation:pulseGlow 5s ease-in-out infinite}
+.landing-content{position:relative;pointer-events:auto;z-index:2;text-align:center;padding:65px 28px 52px;max-width:850px;transform-style:preserve-3d;animation:heroFloat 6s ease-in-out infinite}
+.brand-pill{display:inline-block;padding:9px 15px;border:1px solid rgba(6,78,88,.15);border-radius:999px;background:rgba(255,255,255,.65);font-size:10px;font-weight:900;letter-spacing:.09em;color:var(--deep);box-shadow:0 8px 20px rgba(0,45,52,.08)}
+.cross-mark{margin:26px auto 8px;width:54px;height:54px;display:grid;place-items:center;border-radius:50%;background:linear-gradient(145deg,var(--gold2),var(--gold));color:#fff;font-size:24px;box-shadow:0 12px 30px rgba(120,92,15,.25);transform:translateZ(30px)}
+.eyebrow{margin:0;color:var(--teal);font-size:12px;font-weight:900;letter-spacing:.25em}
+.landing h2{margin:12px 0 8px;font-size:clamp(42px,8vw,82px);line-height:.95;color:var(--deep);letter-spacing:-.055em;text-shadow:0 8px 30px rgba(0,60,67,.12)}
+.landing h2 span{color:var(--gold)}
+.landing-sub{margin:0;font-size:clamp(18px,3vw,28px);font-weight:800;color:var(--ink)}
+.landing-welcome{margin:22px 0 0;font-size:16px;color:var(--muted)}
+.landing-actions{display:flex;justify-content:center;flex-wrap:wrap;gap:13px;margin:32px auto 22px}
+.hero-btn{position:relative;z-index:20;border:0;border-radius:18px;padding:16px 23px;font-weight:900;text-decoration:none;cursor:pointer;min-width:170px;box-shadow:0 14px 32px rgba(0,45,52,.16);transition:transform .25s,box-shadow .25s;display:inline-flex;align-items:center;justify-content:center;gap:14px;font-size:14px}
+.hero-btn:hover{transform:translateY(-4px) rotateX(2deg);box-shadow:0 20px 40px rgba(0,45,52,.24)}
+.hero-btn span{font-size:18px}
+.hero-primary{background:var(--deep);color:#fff}.hero-gold{background:var(--gold);color:#fff}.hero-light{background:rgba(255,255,255,.88);color:var(--deep);border:1px solid rgba(6,78,88,.12)}
+.swipe-hint{font-size:11px;color:#789094;letter-spacing:.08em;margin-top:10px}
+.cover-section{padding-top:5px}
+.single-card{position:relative;min-height:720px;border-radius:32px;overflow:hidden;box-shadow:0 35px 90px rgba(0,34,39,.28);border:1px solid rgba(255,255,255,.7);transform-style:preserve-3d;transition:transform .6s ease}
+.cover-large:hover{transform:rotateY(-2deg) rotateX(1deg) translateY(-4px)}
+.cover-image-wrap{position:absolute;inset:0;background:var(--deep)}
+.cover-image-wrap img{width:100%;height:100%;object-fit:cover;object-position:center 34%;display:block;filter:saturate(.88) contrast(1.03)}
+.cover-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(4,44,50,.15),rgba(4,44,50,.25) 35%,rgba(4,44,50,.88) 100%)}
+.cover-copy{position:absolute;left:0;right:0;bottom:0;padding:50px clamp(24px,6vw,80px) 45px;color:#fff;text-align:center;text-shadow:0 3px 20px rgba(0,0,0,.4)}
+.cover-copy .mini{font-size:12px;font-weight:900;letter-spacing:.16em}.cover-copy h2{font-size:clamp(42px,8vw,82px);line-height:.9;margin:14px 0;color:#fff;letter-spacing:-.05em}.cover-copy .sub{font-weight:900;letter-spacing:.18em}.cover-copy .year{font-size:46px;font-weight:900;color:var(--gold2);margin-top:4px}.cover-copy .quote{max-width:700px;margin:18px auto 0;font-family:Georgia,serif;font-size:18px;line-height:1.5}.cover-copy .quote span{display:block;margin-top:8px;font:800 11px Inter,ui-sans-serif,system-ui;letter-spacing:.18em}.cover-copy .center-note{margin-top:18px;font-size:10px;font-weight:900;letter-spacing:.2em;color:var(--gold2)}
+.hymns-ordered{grid-template-columns:repeat(2,1fr)}
+.hymns-ordered .hymn-card{min-height:100%}
+.share-section{padding-bottom:50px}.sharebox-final{padding:50px 25px}.share-icon{width:62px;height:62px;margin:0 auto 15px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.14);font-size:28px}.share-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}.share-status{min-height:22px;margin-top:16px;font-size:12px;font-weight:800;opacity:.95}
+@keyframes heroFloat{0%,100%{transform:translateY(0) rotateX(1deg)}50%{transform:translateY(-8px) rotateX(1deg)}}
+@keyframes pulseGlow{0%,100%{transform:scale(.92);opacity:.7}50%{transform:scale(1.05);opacity:1}}
+@media(max-width:900px){.landing{width:94vw;min-height:calc(100vh - 20px)}.landing:before{inset:1%;border-radius:28px}.landing-content{padding:48px 18px}.brand-pill{font-size:8px;letter-spacing:.05em}.hero-btn{min-width:145px}.single-card{min-height:650px}.cover-copy{padding:34px 20px}.cover-copy h2{font-size:clamp(38px,12vw,62px)}.hymns-ordered{grid-template-columns:1fr}}
+@media(max-width:520px){.landing-actions{flex-direction:column;align-items:stretch}.hero-btn{width:100%}.single-card{min-height:600px}.cover-image-wrap img{object-position:center 28%}.cover-copy .quote{font-size:15px}.share-actions{flex-direction:column}.share-actions button{width:100%}}
+@media(prefers-reduced-motion:reduce){.landing-content,.landing-glow{animation:none!important}}
+</style></head>
+<body>
+<header id="inicio" class="top-header">
+ <div class="brand">LA IGLESIA DE JESUCRISTO DE LOS SANTOS DE LOS ÚLTIMOS DÍAS</div>
+ <p>Barrio Los Teques · Invitación digital</p>
+</header>
+<main>
+<section class="landing" id="portada">
+  <div class="landing-glow"></div>
+  <div class="landing-content">
+    <div class="brand-pill">LA IGLESIA DE JESUCRISTO DE LOS SANTOS DE LOS ÚLTIMOS DÍAS</div>
+    <div class="cross-mark" aria-hidden="true">✦</div>
+    <p class="eyebrow">INVITACIÓN DIGITAL</p>
+    <h2>Conferencia Anual<br><span>Barrio Los Teques 2026</span></h2>
+    <p class="landing-sub">Barrio Los Teques</p>
+    <p class="landing-welcome">¡Te damos la bienvenida!</p>
+    <div class="landing-actions">
+      <a class="hero-btn hero-primary" href="#programa">Ver programa <span>→</span></a>
+      <a class="hero-btn hero-gold" href="#himnos">Himnos <span>♫</span></a>
+      <a class="hero-btn hero-light" href="#compartir">Compartir <span>↗️</span></a>
+    </div>
+    <div class="swipe-hint">Desliza para entrar a la invitación</div>
+  </div>
+</section>
+
+<section class="section cover-section" id="cristo">
+ <div class="scene">
+  <div class="single-card cover-large">
+   <div class="cover-image-wrap"><img src="data:image/jpeg;base64,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

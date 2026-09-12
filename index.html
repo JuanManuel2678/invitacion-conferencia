@@ -409,7 +409,7 @@
         perspective: 1600px;
       }
       .landing:before {
-        pointer-events: none;
+        pointer-events: none !important;
         content: "";
         position: absolute;
         inset: 3%;
@@ -442,7 +442,7 @@
       .landing-content {
         position: relative;
         pointer-events: auto;
-        z-index: 2;
+        z-index: 10;
         text-align: center;
         padding: 65px 28px 52px;
         max-width: 850px;
@@ -512,7 +512,8 @@
       }
       .hero-btn {
         position: relative;
-        z-index: 20;
+        z-index: 10;
+        pointer-events: auto;
         border: 0;
         border-radius: 18px;
         padding: 16px 23px;
@@ -530,10 +531,10 @@
         gap: 14px;
         font-size: 14px;
       }
-      .hero-btn:hover {
+      /* .hero-btn:hover {
         transform: translateY(-4px) rotateX(2deg);
         box-shadow: 0 20px 40px rgba(0, 45, 52, 0.24);
-      }
+      } */
       .hero-btn span {
         font-size: 18px;
       }
@@ -712,10 +713,15 @@
           min-height: calc(100vh - 20px);
         }
         .landing:before {
+          pointer-events: none !important;
+          z-index: 1;
           inset: 1%;
           border-radius: 28px;
         }
         .landing-content {
+          position: relative;
+          z-index: 10;
+          pointer-events: auto;
           padding: 48px 18px;
         }
         .brand-pill {
@@ -763,7 +769,11 @@
         }
       }
       @media (prefers-reduced-motion: reduce) {
-        .landing-content,
+        .landing-content {
+          position: relative;
+          z-index: 10;
+          pointer-events: auto;
+        }
         .landing-glow {
           animation: none !important;
         }
@@ -1098,37 +1108,33 @@
       }
     </style>
     <script>
-      (function () {
-        function go(id) {
-          var el = document.getElementById(id);
-          if (!el) return false;
-          try {
-            history.pushState(null, "", "#" + id);
-          } catch (e) {}
-          el.scrollIntoView({ behavior: "smooth", block: "start" });
-          return false;
+(function () {
+    document.addEventListener("click", function (e) {
+      var a = e.target.closest && e.target.closest('a[href^="#"]');
+      if (!a) return;
+
+      var hash = a.getAttribute("href");
+      if (hash === "#" || hash === "") return;
+
+      var target = document.querySelector(hash);
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+        history.pushState(null, "", hash);
+      }
+    });
+
+    window.addEventListener("load", function () {
+      if (location.hash) {
+        var el = document.querySelector(location.hash);
+        if (el) {
+          setTimeout(function () {
+            el.scrollIntoView({ behavior: "smooth" });
+          }, 100);
         }
-        document.addEventListener(
-          "click",
-          function (e) {
-            var a =
-              e.target.closest && e.target.closest('a.hero-btn[href^="#"]');
-            if (!a) return;
-            var id = a.getAttribute("href").slice(1);
-            if (go(id)) e.preventDefault();
-          },
-          true,
-        );
-        window.addEventListener("load", function () {
-          if (location.hash) {
-            var el = document.getElementById(location.hash.slice(1));
-            if (el)
-              setTimeout(function () {
-                el.scrollIntoView({ behavior: "auto" });
-              }, 50);
-          }
-        });
-      })();
+      }
+    });
+  })();
     </script>
     <script>
       (function () {
